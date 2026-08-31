@@ -24,3 +24,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.impeccable
+./docs
+
+DESIGN.md
+PRODUCT.md
