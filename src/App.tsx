@@ -34,20 +34,26 @@ function App() {
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
-      <ActiveSlide />
+      <div key={index} className="slide-fade h-full w-full">
+        <ActiveSlide />
+      </div>
 
-      {!isPhotoSlider && index > 0 && (
+      {index > 0 && (
         <button
           aria-label="Previous slide"
           onClick={prev}
-          className="fixed left-0 top-0 h-full w-1/4 cursor-w-resize"
+          className={`fixed top-0 h-full cursor-w-resize ${
+            isPhotoSlider ? 'left-24 w-16' : 'left-0 w-1/4'
+          }`}
         />
       )}
-      {!isPhotoSlider && index < slides.length - 1 && (
+      {index < slides.length - 1 && (
         <button
           aria-label="Next slide"
           onClick={next}
-          className="fixed right-0 top-0 h-full w-1/4 cursor-e-resize"
+          className={`fixed top-0 h-full cursor-e-resize ${
+            isPhotoSlider ? 'right-24 w-16' : 'right-0 w-1/4'
+          }`}
         />
       )}
 
