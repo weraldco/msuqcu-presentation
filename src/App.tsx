@@ -26,6 +26,7 @@ function App() {
   }
 
   const ActiveSlide = slides[index]
+  const isPhotoSlider = ActiveSlide === PhotoSliderSlide
 
   return (
     <div
@@ -35,14 +36,14 @@ function App() {
     >
       <ActiveSlide />
 
-      {index > 0 && (
+      {!isPhotoSlider && index > 0 && (
         <button
           aria-label="Previous slide"
           onClick={prev}
           className="fixed left-0 top-0 h-full w-1/4 cursor-w-resize"
         />
       )}
-      {index < slides.length - 1 && (
+      {!isPhotoSlider && index < slides.length - 1 && (
         <button
           aria-label="Next slide"
           onClick={next}
