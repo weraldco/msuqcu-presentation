@@ -1,32 +1,26 @@
-# React + TypeScript + Vite
+# Your Path Doesn't Have to Be Straight
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A browser-based talk-deck presentation, built with React + TypeScript +
+Tailwind CSS. Four full-screen slides walk through the talk "Your Path
+Doesn't Have to Be Straight," including a title slide, a quote slide, a
+swipeable photo carousel, and a closing slide.
 
-Currently, two official plugins are available:
+## Running it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Then open the printed local URL in your browser. Use `npm run build` to
+produce a production bundle in `dist/`, and `npm run test` to run the
+test suite.
+
+## Navigating the deck
+
+- **Arrow keys** — press Right/Left to move to the next/previous slide.
+- **Click** — click the left or right edge of the screen to go back or
+  forward.
+- **Swipe** — on touch devices, swipe left/right to change slides.
+- **Dots** — click a dot in the bottom navigation bar to jump directly
+  to a slide.
