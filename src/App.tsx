@@ -2,11 +2,20 @@ import { useRef } from 'react'
 import { useSlideNav } from './hooks/useSlideNav'
 import { SlideNav } from './components/SlideNav'
 import { TitleSlide } from './components/slides/TitleSlide'
+import { SpeakerSlide } from './components/slides/SpeakerSlide'
 import { QuoteSlide } from './components/slides/QuoteSlide'
 import { PhotoSliderSlide } from './components/slides/PhotoSliderSlide'
 import { FinalSlide } from './components/slides/FinalSlide'
+import { ContactSlide } from './components/slides/ContactSlide'
 
-const slides = [TitleSlide, QuoteSlide, PhotoSliderSlide, FinalSlide]
+const slides = [
+  TitleSlide,
+  SpeakerSlide,
+  QuoteSlide,
+  PhotoSliderSlide,
+  FinalSlide,
+  ContactSlide,
+]
 const SWIPE_THRESHOLD_PX = 50
 
 function App() {
