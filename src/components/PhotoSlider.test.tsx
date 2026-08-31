@@ -29,4 +29,10 @@ describe('PhotoSlider', () => {
     fireEvent.click(screen.getByLabelText('Go to photo 3'))
     expect(screen.getByRole('img')).toHaveAttribute('src', '/c.jpg')
   })
+
+  it('renders nothing when images array is empty', () => {
+    const { container } = render(<PhotoSlider images={[]} />)
+    expect(container.querySelector('img')).not.toBeInTheDocument()
+    expect(container.querySelectorAll('button')).toHaveLength(0)
+  })
 })

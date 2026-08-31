@@ -4,7 +4,11 @@ export function PhotoSlider({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0)
 
   function clamp(i: number) {
-    return Math.min(Math.max(i, 0), images.length - 1)
+    return Math.min(Math.max(i, 0), Math.max(images.length - 1, 0))
+  }
+
+  if (images.length === 0) {
+    return null
   }
 
   return (
