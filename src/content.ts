@@ -1,250 +1,270 @@
 export type SlideEntry =
-  | { type: 'title'; heading: string; subtitle?: string }
-  | {
-      type: 'speaker'
-      photo: string
-      name: string
-      role: string
-      bio: string[]
-    }
-  | { type: 'heading'; id?: string; number?: string; heading: string }
-  | { type: 'subheading'; heading: string }
-  | { type: 'gallery'; images: string[] }
-  | { type: 'quote'; lines: string[]; keyMessage?: string }
-  | { type: 'list'; heading: string; items: string[]; quote?: string }
-  | {
-      type: 'lesson'
-      number: number
-      title: string
-      quote?: string
-      body: string
-    }
-  | { type: 'final'; heading: string; subheading: string }
-  | {
-      type: 'contact'
-      heading: string
-      qrCode: string
-      socials: { label: string; handle: string }[]
-    }
-
-function photos(label: string, count: number): string[] {
-  return Array.from(
-    { length: count },
-    (_, i) =>
-      `https://placehold.co/1200x800/1a1a1d/ffffff?text=${encodeURIComponent(label)}+${i + 1}`,
-  )
-}
+	| { type: 'title'; heading: string; subtitle?: string }
+	| {
+			type: 'speaker';
+			photo: string;
+			name: string;
+			role: string;
+			bio: string[];
+	  }
+	| { type: 'heading'; id?: string; number?: string; heading: string }
+	| { type: 'subheading'; heading: string }
+	| { type: 'gallery'; images: string[] }
+	| { type: 'quote'; lines: string[]; keyMessage?: string }
+	| { type: 'list'; heading: string; items: string[]; quote?: string }
+	| {
+			type: 'lesson';
+			number: number;
+			title: string;
+			quote?: string;
+			body: string;
+	  }
+	| { type: 'final'; heading: string; subheading: string }
+	| {
+			type: 'contact';
+			heading: string;
+			qrCode: string;
+			socials: { label: string; handle: string }[];
+	  };
 
 export const chapterMarkers = [
-  { id: 'home', number: '00', label: 'Home' },
-  { id: 'ch-1', number: '01', label: 'College, 2007' },
-  { id: 'ch-2', number: '02', label: 'Going Into Tech' },
-  { id: 'ch-3', number: '03', label: 'A Real Job' },
-  { id: 'ch-4', number: '04', label: 'Something Funny' },
-  { id: 'ch-5', number: '05', label: 'My People' },
-  { id: 'ch-6', number: '06', label: 'What I Learned' },
-  { id: 'ch-7', number: '07', label: 'Final Message' },
-]
+	{ id: 'home', number: '00', label: 'Home' },
+	{ id: 'ch-1', number: '01', label: 'Student Life' },
+	{ id: 'ch-2', number: '02', label: 'The Real World' },
+	{ id: 'ch-3', number: '03', label: 'Different Paths' },
+	{ id: 'ch-4', number: '04', label: 'The Dream Knocks' },
+	{ id: 'ch-5', number: '05', label: 'The Community' },
+	{ id: 'ch-6', number: '06', label: 'What I Learned' },
+	{ id: 'ch-7', number: '07', label: 'Final Message' },
+];
 
 export const deck: SlideEntry[] = [
-  {
-    type: 'title',
-    heading: "Your Path Doesn't Have to Be Straight",
-    subtitle: 'What Rejection, Passion, and Community Taught Me',
-  },
-  {
-    type: 'speaker',
-    photo: '/werald-opolento-photo.png',
-    name: 'Werald Coronel Opolento',
-    role: 'Web Developer at Upsmash Digital Inc · Deployment Specialist at Eagleview Inc.',
-    bio: [
-      'QCPU BSIT Graduate, SY 2007–2011',
-      'AutoCAD Specialist for 10+ years',
-      'Co-Founder, Paldo Developer Group',
-      'Volunteer Web Developer, AWS Community Day 2026',
-      'Workshop Facilitator, Google DevFest 2025',
-      'Member, Data Engineering ng Pilipinas Leadership Program',
-    ],
-  },
+	{
+		type: 'title',
+		heading: "Your Path Doesn't Have to Be Straight",
+		subtitle: 'What Rejection, Passion, and Community Taught Me',
+	},
+	{
+		type: 'speaker',
+		photo: '/werald-opolento-photo.png',
+		name: 'Werald Coronel Opolento',
+		role: 'Web Developer at Upsmash Digital Inc · Deployment Specialist at Eagleview Inc.',
+		bio: [
+			'QCPU BSIT Graduate, SY 2007–2011',
+			'AutoCAD Specialist for 10+ years',
+			'Co-Founder the Paldo Developer Group',
+			'Volunteer as Frontend Developer in AWS Community Day 2026',
+			'Workshop Facilitator in Google DevFest 2025',
+			'Member of Data Engineering ng Pilipinas Leadership Program',
+			'Developer at CultureHub Australia',
+		],
+	},
 
-  // 1. So… What Was College Like in 2007?
-  {
-    type: 'heading',
-    id: 'ch-1',
-    number: '01',
-    heading: 'So… What Was College Like in 2007?',
-  },
-  { type: 'gallery', images: photos('Campus', 5) },
-  {
-    type: 'subheading',
-    heading: 'I thought I had a pretty good idea of what my future would look like.',
-  },
-  {
-    type: 'quote',
-    lines: ['I was completely wrong.'],
-    keyMessage:
-      "You don't need to have your entire future figured out while you're in college.",
-  },
+	// 1. Student Life — Where It Started
+	{
+		type: 'heading',
+		id: 'ch-1',
+		number: '01',
+		heading: 'Student Life — Where It Started',
+	},
+	{
+		type: 'gallery',
+		images: [
+			'/1-student/1.png',
+			'/1-student/2.jpeg',
+			'/1-student/3.1.jpeg',
+			'/1-student/3.2.jpeg',
+			'/1-student/4.png',
+			'/1-student/4.1.png',
+			'/1-student/5.png',
+			'/1-student/6.png',
+			'/1-student/7.jpeg',
+			'/1-student/8.png',
+			'/1-student/9.png',
+		],
+	},
+	{
+		type: 'quote',
+		lines: [
+			'Your job is to explore, experience new things, break a few things, learn from them, and make friends along the way.',
+		],
+	},
 
-  // 2. I Thought I Was Going Into Tech
-  {
-    type: 'heading',
-    id: 'ch-2',
-    number: '02',
-    heading: 'I Thought I Was Going Into Tech',
-  },
-  { type: 'gallery', images: photos('Campus-Tech', 5) },
+	// 2. After College — The IRL (In Real Life)
+	{
+		type: 'heading',
+		id: 'ch-2',
+		number: '02',
+		heading: 'After College — IRL (In Real Life) Zone',
+	},
 
-  // The Rejection (sub-page of chapter 2)
-  { type: 'subheading', heading: 'The Rejection' },
-  { type: 'gallery', images: photos('Rejection-Letter', 1) },
-  {
-    type: 'quote',
-    lines: [
-      'At that point, I thought… maybe technology and I need some time apart.',
-    ],
-    keyMessage:
-      "Rejection is part of the journey. One rejection doesn't define your ability or your future.",
-  },
+	{
+		type: 'gallery',
+		images: ['/2-job-rejection/job-rejection.png'],
+	},
+	{
+		type: 'quote',
+		lines: ['I got rejected.'],
+	},
+	{
+		type: 'subheading',
+		heading:
+			'At that point, I thought… okay, maybe technology doesn’t want me.',
+	},
 
-  // 3. Fine. I'll Get a Real Job.
-  {
-    type: 'heading',
-    id: 'ch-3',
-    number: '03',
-    heading: "Fine. I'll Get a Real Job.",
-  },
-  { type: 'gallery', images: photos('First-Job', 3) },
-  {
-    type: 'quote',
-    lines: [
-      'Basically, I was doing what most people do after college: pretending I knew what I was doing.',
-    ],
-  },
+	// 3. I Tried Different Paths
+	{
+		type: 'heading',
+		id: 'ch-3',
+		number: '03',
+		heading: 'I Tried Different Paths',
+	},
+	{
+		type: 'subheading',
+		heading: 'And accepted my first job as an AutoCAD Specialist.',
+	},
+	{
+		type: 'gallery',
+		images: [
+			'/3-other-path/1.png',
+			'/3-other-path/2.png',
+			'/3-other-path/3.png',
+			'/3-other-path/4.jpg',
+			'/3-other-path/5.jpg',
+			'/3-other-path/6.jpg',
+			'/3-other-path/7.jpg',
+			'/3-other-path/8.jpg',
+		],
+	},
+	{
+		type: 'quote',
+		lines: [
+			'I enjoyed the comfort zone of life, to the point that I almost forgot my dream.',
+		],
+	},
+	{
+		type: 'quote',
+		lines: ['"Enjoying life is good. Forgetting your dreams is not."'],
+	},
 
-  // Life Happened (sub-page of chapter 3)
-  { type: 'subheading', heading: 'Life Happened' },
-  {
-    type: 'quote',
-    lines: ['Then life got even more interesting. I met the love of my life,'],
-    keyMessage:
-      "Life doesn't always follow the plan you made after graduation—and that's okay.",
-  },
-  { type: 'gallery', images: photos('Family', 1) },
+	// 4. But My Dream Was Still Knocking on the Door
+	{
+		type: 'heading',
+		id: 'ch-4',
+		number: '04',
+		heading: 'But My Dream Was Still Knocking on the Door',
+	},
+	{
+		type: 'quote',
+		lines: ['What if I try again?'],
+	},
+	{
+		type: 'quote',
+		lines: ['The ghost of my own doubt, talking back to me.'],
+	},
+	{ type: 'subheading', heading: 'So I asked myself,' },
+	{
+		type: 'quote',
+		lines: ['Am I too late?'],
+	},
+	{
+		type: 'quote',
+		lines: ["If I keep waiting for the perfect time, I'll never start."],
+	},
+	{
+		type: 'gallery',
+		images: [
+			'/4-comeback/1.jpeg',
+			'/4-comeback/2.jpeg',
+			'/4-comeback/3.jpeg',
+			'/4-comeback/4.jpeg',
+		],
+	},
 
-  // 4. Then Something Funny Happened…
-  {
-    type: 'heading',
-    id: 'ch-4',
-    number: '04',
-    heading: 'Then Something Funny Happened…',
-  },
-  { type: 'gallery', images: photos('Career-Transition', 1) },
-  {
-    type: 'quote',
-    lines: [
-      'Years passed, but that interest in technology never completely disappeared.',
-      'Wait. Can I still do this?',
-      "But eventually I realized something: there's no expiration date on learning.",
-    ],
-    keyMessage: "It's okay to start—or start again—later than you originally planned.",
-  },
+	// 5. The Community — Not Alone Anymore
+	{
+		type: 'heading',
+		id: 'ch-5',
+		number: '05',
+		heading: "The Community — I Wasn't Alone Anymore",
+	},
+	{
+		type: 'gallery',
+		images: [
+			'/5-community/1.jpeg',
+			'/5-community/2.jpg',
+			'/5-community/3.JPG',
+			'/5-community/4.JPG',
+			'/5-community/5.JPG',
+			'/5-community/6.JPG',
+			'/5-community/7.JPG',
+			'/5-community/8.JPG',
+			'/5-community/9.JPG',
+		],
+	},
+	{
+		type: 'quote',
+		lines: [
+			"It's about finding people who are walking in the same direction with you.",
+		],
+		keyMessage:
+			'You never know which person you meet today will become part of your story tomorrow.',
+	},
 
-  // 5. Then I Found My People
-  {
-    type: 'heading',
-    id: 'ch-5',
-    number: '05',
-    heading: 'Then I Found My People',
-  },
-  { type: 'gallery', images: photos('Community', 10) },
-  {
-    type: 'list',
-    heading: 'What Community Gave Me',
-    items: [
-      'People — people who share the same interests',
-      "Learning — people who can teach you things you don't know",
-      'Opportunities — events, jobs, projects, and collaborations',
-      "Confidence — a place to contribute even while you're still learning",
-      'Connections — people who can become friends, mentors, teammates, or future colleagues',
-    ],
-    quote: 'You never know who is sitting beside you.',
-  },
-  { type: 'gallery', images: photos('Milestones', 10) },
+	// 6. What I Learned
+	{
+		type: 'heading',
+		id: 'ch-6',
+		number: '06',
+		heading: 'What I Learned',
+	},
+	{
+		type: 'lesson',
+		number: 1,
+		title: "Explore while you're young.",
+		body: '',
+	},
+	{
+		type: 'lesson',
+		number: 2,
+		title: "Don't be afraid of rejection.",
+		body: '',
+	},
+	{
+		type: 'lesson',
+		number: 3,
+		title: "Don't compare your timeline.",
+		body: '',
+	},
+	{
+		type: 'lesson',
+		number: 4,
+		title: 'Find your people.',
+		body: '',
+	},
 
-  // 6. So What Did I Learn?
-  {
-    type: 'heading',
-    id: 'ch-6',
-    number: '06',
-    heading: 'So What Did I Learn?',
-  },
-  {
-    type: 'lesson',
-    number: 1,
-    title: "Don't worry about having everything figured out.",
-    quote: "Seriously. I didn't.",
-    body: "You're a student. You're supposed to be learning and exploring.",
-  },
-  {
-    type: 'lesson',
-    number: 2,
-    title: 'Try things.',
-    quote:
-      "Join an organization. Attend an event. Build something. Break something. Hopefully don't break production. 😂",
-    body: "You don't need to know whether something will become your career. Sometimes you discover your passion simply by trying.",
-  },
-  {
-    type: 'lesson',
-    number: 3,
-    title: "Don't be afraid of rejection.",
-    quote: "You're going to hear no. Sometimes multiple times. Keep applying.",
-    body: 'A rejection is an event—not your identity.',
-  },
-  {
-    type: 'lesson',
-    number: 4,
-    title: "Don't compare your timeline",
-    body: "Everyone's path looks different — and that's fine.",
-  },
-  {
-    type: 'lesson',
-    number: 5,
-    title: 'Find your community.',
-    quote: "Don't just collect certificates. Collect people.",
-    body: 'Learn from them. Help them. Grow with them.',
-  },
+	// 7. My Final Message
+	{ type: 'heading', id: 'ch-7', number: '07', heading: 'My Final Message' },
+	{
+		type: 'quote',
+		lines: ["You don't have to have your entire career figured out today."],
+	},
 
-  // 7. Final Message
-  { type: 'heading', id: 'ch-7', number: '07', heading: 'Final Message' },
-  {
-    type: 'quote',
-    lines: [
-      "So if you're a student and you're currently thinking…",
-      "'I don't know what I'm going to do after graduation.'",
-      'Congratulations.',
-      "You're normal. 😂",
-      "You don't need to have the entire map figured out.",
-      'Try things. Make mistakes. Get rejected. Meet people. Learn something new.',
-      "Your path doesn't have to be straight.",
-      "Mine certainly wasn't.",
-    ],
-    keyMessage: "Just make sure you're moving.",
-  },
-  {
-    type: 'final',
-    heading: "YOUR PATH DOESN'T HAVE TO BE STRAIGHT.",
-    subheading: 'Just keep moving.',
-  },
+	{
+		type: 'final',
+		heading: "YOUR PATH DOESN'T HAVE TO BE STRAIGHT.",
+		subheading:
+			'Just keep on Exploring, Trying, Learning, Connect and Keep Moving.',
+	},
 
-  {
-    type: 'contact',
-    heading: "Let's Connect",
-    qrCode: 'https://placehold.co/320x320/ffffff/1a1a1d?text=QR+Code',
-    socials: [
-      { label: 'LinkedIn', handle: 'linkedin.com/in/your-handle' },
-      { label: 'GitHub', handle: 'github.com/your-handle' },
-      { label: 'Portfolio', handle: 'yourportfolio.com' },
-    ],
-  },
-]
+	{
+		type: 'contact',
+		heading: "Let's Connect",
+		qrCode: 'https://placehold.co/320x320/ffffff/1a1a1d?text=QR+Code',
+		socials: [
+			{ label: 'LinkedIn', handle: 'linkedin.com/in/your-handle' },
+			{ label: 'GitHub', handle: 'github.com/your-handle' },
+			{ label: 'Portfolio', handle: 'yourportfolio.com' },
+		],
+	},
+];

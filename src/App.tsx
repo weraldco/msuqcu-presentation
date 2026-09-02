@@ -10,6 +10,7 @@ import { ListSection } from './components/sections/ListSection'
 import { LessonSection } from './components/sections/LessonSection'
 import { FinalSection } from './components/sections/FinalSection'
 import { ContactSection } from './components/sections/ContactSection'
+import { useClickAdvance } from './hooks/useClickAdvance'
 import { deck, type SlideEntry } from './content'
 
 function renderContent(entry: Exclude<SlideEntry, { type: 'gallery' }>) {
@@ -75,6 +76,7 @@ function buildPanelItems(): PanelItem[] {
 }
 
 function App() {
+  useClickAdvance()
   const items = buildPanelItems()
   let zIndex = 0
 

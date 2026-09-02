@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap, prefersReducedMotion } from '../lib/motion'
+import { registerStop } from '../lib/scrollStops'
 
 export function StackPanel({
   children,
@@ -12,6 +13,12 @@ export function StackPanel({
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current
+    if (!wrapper) return
+    return registerStop(() => wrapper.getBoundingClientRect().top + window.scrollY)
+  }, [])
 
   useEffect(() => {
     const wrapper = wrapperRef.current
