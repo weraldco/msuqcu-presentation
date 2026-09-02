@@ -20,11 +20,11 @@ export type SlideEntry =
 			body: string;
 	  }
 	| { type: 'final'; heading: string; subheading: string }
+	| { type: 'qr'; heading: string; qr: string; caption?: string }
 	| {
 			type: 'contact';
 			heading: string;
-			qrCode: string;
-			socials: { label: string; handle: string }[];
+			qrs: { label: string; qr: string }[];
 	  };
 
 export const chapterMarkers = [
@@ -210,6 +210,12 @@ export const deck: SlideEntry[] = [
 		keyMessage:
 			'You never know which person you meet today will become part of your story tomorrow.',
 	},
+	{
+		type: 'qr',
+		heading: 'Join My Community',
+		qr: '/qr/paldodev.png',
+		caption: 'Paldo Developer Group',
+	},
 
 	// 6. What I Learned
 	{
@@ -260,11 +266,10 @@ export const deck: SlideEntry[] = [
 	{
 		type: 'contact',
 		heading: "Let's Connect",
-		qrCode: 'https://placehold.co/320x320/ffffff/1a1a1d?text=QR+Code',
-		socials: [
-			{ label: 'LinkedIn', handle: 'linkedin.com/in/your-handle' },
-			{ label: 'GitHub', handle: 'github.com/your-handle' },
-			{ label: 'Portfolio', handle: 'yourportfolio.com' },
+		qrs: [
+			{ label: 'GitHub', qr: '/qr/github.png' },
+			{ label: 'LinkedIn', qr: '/qr/linkedin.png' },
+			{ label: 'Portfolio', qr: '/qr/portfolio.png' },
 		],
 	},
 ];

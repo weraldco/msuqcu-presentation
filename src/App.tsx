@@ -9,6 +9,7 @@ import { QuoteSection } from './components/sections/QuoteSection'
 import { ListSection } from './components/sections/ListSection'
 import { LessonSection } from './components/sections/LessonSection'
 import { FinalSection } from './components/sections/FinalSection'
+import { QrSection } from './components/sections/QrSection'
 import { ContactSection } from './components/sections/ContactSection'
 import { useClickAdvance } from './hooks/useClickAdvance'
 import { deck, type SlideEntry } from './content'
@@ -40,8 +41,10 @@ function renderContent(entry: Exclude<SlideEntry, { type: 'gallery' }>) {
       )
     case 'final':
       return <FinalSection heading={entry.heading} subheading={entry.subheading} />
+    case 'qr':
+      return <QrSection heading={entry.heading} qr={entry.qr} caption={entry.caption} />
     case 'contact':
-      return <ContactSection heading={entry.heading} qrCode={entry.qrCode} socials={entry.socials} />
+      return <ContactSection heading={entry.heading} qrs={entry.qrs} />
   }
 }
 
